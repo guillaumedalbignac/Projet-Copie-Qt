@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>977</width>
-    <height>618</height>
+    <width>971</width>
+    <height>741</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
       <x>9</x>
       <y>9</y>
       <width>951</width>
-      <height>551</height>
+      <height>681</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -33,25 +33,15 @@
         </size>
        </property>
        <property name="text">
-        <string>Séléctionner une photo :</string>
+        <string>Séléctionner un joueur :</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QComboBox" name="comboBox"/>
+      <widget class="QComboBox" name="comboBox_2"/>
      </item>
      <item>
-      <widget class="QLabel" name="label_2">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
+      <widget class="QTextEdit" name="textEdit"/>
      </item>
      <item>
       <widget class="QTableView" name="tableView">
@@ -84,7 +74,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>977</width>
+     <width>971</width>
      <height>25</height>
     </rect>
    </property>
