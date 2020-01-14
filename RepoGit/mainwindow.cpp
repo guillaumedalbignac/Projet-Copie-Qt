@@ -7,6 +7,7 @@
 #include <QDebug>
 #include <QString>
 #include <QMessageBox>
+#include <QFile>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -47,6 +48,8 @@ MainWindow::MainWindow(QWidget *parent)
     else{
         QMessageBox::critical(this,"Erreur",query.lastError().text());
     }
+//----------------------------------------------------------------\\
+
 
 }
 
@@ -59,21 +62,20 @@ MainWindow::~MainWindow()
 void MainWindow::on_comboBox_2_currentIndexChanged()
 {
     //Affichage du tag image correspondant au joueur selectionner
-    QString nomJoueur = ui->comboBox_2->currentText();
-    QString imagesRecues;
-    QSqlQuery query2;
-    query2.prepare("SELECT DISTINCT imagetir FROM joueurs WHERE prenom='" + nomJoueur + "'"); //faire par date de tir croissante !
-    query2.exec();
 
-    if(query2.isActive() && query2.isSelect()){
-       while(query2.next()){
-            imagesRecues = imagesRecues + query2.value(0).toString() + "\n";
+    nomJoueur = ui->comboBox_2->currentText();  //Récupération du nom du joueur séléctionner
+    query2 = new QSqlQuery;
+    query2->exec("SELECT DISTINCT imagetir FROM joueurs WHERE prenom='" + nomJoueur + "'"); //Query SQL pour les tags d'images relatives aux tirs
+
+    if(query2->isActive() && query2->isSelect()){
+       while(query2->next()){
+            imagesRecues = imagesRecues + query2->value(0).toString() + "\n";   //Chaque nouveau tag est stockée dans un QString
             }
-        ui->textEdit->setText(imagesRecues);
+        ui->textEdit->setText(imagesRecues);    //Affichage du/des tag(s) correspondants au joueur
         qDebug() << nomJoueur;
     }
     else{
-        QMessageBox::critical(this,"Erreur",query2.lastError().text());
+        QMessageBox::critical(this,"Erreur",query2->lastError().text());
     }
-
+    imagesRecues = "";  //Vidage du plainText à chaque changement de selection
 }

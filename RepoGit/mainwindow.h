@@ -25,5 +25,9 @@ private:
     Ui::MainWindow *ui;
     QSqlDatabase maDataBase;
     QSqlQueryModel *model;
+    //----------------------------------------//
+    QString imagesRecues;
+    QSqlQuery *query2;
+    QString nomJoueur;
 };
 #endif // MAINWINDOW_H
