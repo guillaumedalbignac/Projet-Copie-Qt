@@ -2,8 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QSqlDatabase>
-#include <QSqlQueryModel>
+#include <QFileInfo>
+#include <QProcess>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,15 +19,19 @@ public:
 
 private slots:
 
-    void on_comboBox_2_currentIndexChanged();
+
+    void on_pushButton_clicked();
+
+    void on_pushButton_3_clicked();
 
 private:
     Ui::MainWindow *ui;
-    QSqlDatabase maDataBase;
-    QSqlQueryModel *model;
-    //----------------------------------------//
-    QString imagesRecues;
-    QSqlQuery *query2;
-    QString nomJoueur;
+
+     QString filePath;
+     QString filePath2;
+     QString pathFinal;
+     QProcess *powershell;
+     QString cheminPowershell = "C:/Windows/system32/WindowsPowerShell/v1.0/powershell.exe";
+     QStringList parametre;
 };
 #endif // MAINWINDOW_H
