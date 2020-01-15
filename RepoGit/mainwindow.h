@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QFileInfo>
 #include <QProcess>
+#include "transfertimages.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,19 +20,13 @@ public:
 
 private slots:
 
-
     void on_pushButton_clicked();
 
-    void on_pushButton_3_clicked();
 
 private:
     Ui::MainWindow *ui;
+    QString cheminUtilisateur;
+    TransfertImages *obj;
 
-     QString filePath;
-     QString filePath2;
-     QString pathFinal;
-     QProcess *powershell;
-     QString cheminPowershell = "C:/Windows/system32/WindowsPowerShell/v1.0/powershell.exe";
-     QStringList parametre;
 };
 #endif // MAINWINDOW_H

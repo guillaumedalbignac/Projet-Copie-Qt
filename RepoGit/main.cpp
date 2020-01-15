@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "transfertimages.h"
 
 #include <QApplication>
 
