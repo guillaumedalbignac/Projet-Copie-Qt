@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
 }
 
 MainWindow::~MainWindow()
@@ -21,9 +22,10 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    cheminUtilisateur = QFileDialog::getExistingDirectory(this,tr("Open Directory"),"");
+   // cheminUtilisateur = QFileDialog::getExistingDirectory(this,tr("Open Directory"),"");
     obj = new TransfertImages;
-    if(cheminUtilisateur != ""){
+    if(cheminUtilisateur != "" && obj->detecterCarteSd() == true){
          obj->effectuerTransfert(cheminUtilisateur);
+         qDebug() << "Transfert ok...!";
     }
 }
