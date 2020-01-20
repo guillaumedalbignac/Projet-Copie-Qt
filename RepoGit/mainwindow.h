@@ -18,14 +18,21 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-private slots:
+public slots:
+    void maFonctionTimer(); //Fonction servant à vérifier en permannace si une carte SD est présente
 
+private slots:
     void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;
-    QString cheminUtilisateur = "E:/DCIM";
-    TransfertImages *obj;
+
+    //Variables pour la fonction de transfert
+    QString cheminUtilisateur = "E:/DCIM/Camera";
+    TransfertImages *obj;   //Pointeur vers un objet de la classe TransfertImages
+
+    //Objet timer utiliser pour maFonctionTimer()
+    QTimer *monTimer;
 
 };
 #endif // MAINWINDOW_H

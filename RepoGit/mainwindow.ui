@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>389</width>
-    <height>336</height>
+    <width>271</width>
+    <height>163</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,28 +19,15 @@
      <rect>
       <x>9</x>
       <y>9</y>
-      <width>361</width>
-      <height>271</height>
+      <width>251</width>
+      <height>101</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QLabel" name="label">
-       <property name="maximumSize">
-        <size>
-         <width>190</width>
-         <height>20</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Séléctionner le chemin d'accès :</string>
-       </property>
-      </widget>
-     </item>
-     <item>
       <widget class="QPushButton" name="pushButton">
        <property name="text">
-        <string>Démarrer processus</string>
+        <string>Démarrer le processus</string>
        </property>
       </widget>
      </item>
@@ -65,7 +52,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>389</width>
+     <width>271</width>
      <height>25</height>
     </rect>
    </property>
