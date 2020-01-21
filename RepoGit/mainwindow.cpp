@@ -13,6 +13,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    ui->pushButton->setEnabled(false);  //Bouton désactivé de base, en attente de carte SD
+
     //Mise en place du timer de détection de la carte SD
     monTimer = new QTimer;
 
@@ -38,7 +40,8 @@ void MainWindow::maFonctionTimer()  //Fonction utilisé en boucle pour détecter
 
     if(cheminUtilisateur != "" && obj->detecterCarteSd() == true){
          obj->effectuerTransfert(cheminUtilisateur);    //Appel de la fonction de transfert avec pour argument le chemi d'accès
-         qDebug() << "Transfert ok...!";
+         //qDebug() << "Transfert ok...!";
+         ui->pushButton->setEnabled(true);  //Activation du bouton suite à une réussite de transfert
          monTimer->stop();  //Arret du timer suite à un transfert réussie
         }
 }

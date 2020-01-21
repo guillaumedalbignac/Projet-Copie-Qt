@@ -28,7 +28,7 @@ private:
     Ui::MainWindow *ui;
 
     //Variables pour la fonction de transfert
-    QString cheminUtilisateur = "E:/DCIM/Camera";
+    QString cheminUtilisateur = "E:/DCIM";
     TransfertImages *obj;   //Pointeur vers un objet de la classe TransfertImages
 
     //Objet timer utiliser pour maFonctionTimer()

@@ -20,7 +20,8 @@ void TransfertImages::effectuerTransfert(QString cheminDonne)   //Fonction perme
         processTransfert->waitForFinished(-1);
         processTransfert->exitCode();
         commandePowershell.clear(); //Une fois terminée on vide la avriable contenant la commande Powershell
-        qDebug() << "Transfert terminé...!";
+        //qDebug() << "Transfert terminé...!";
+        QMessageBox::information(qobject_cast<QWidget *> (parent()),"","Transfert terminée...!");
 }
 
 bool TransfertImages::detecterCarteSd() //Fonction permettant la détection d'insertion d'une carte SD
